@@ -1,12 +1,15 @@
 name: First Workflow
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: echo "Hello World!"
-      - name: Print goodbye
+      - name: Hello
         run: |
-          echo "First output"
-          echo "Second output"
+          echo "Hello Worls"
+          echo "I am the Second Line"
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Github context
+        run: echo "{{ toJSON(github) }}"
